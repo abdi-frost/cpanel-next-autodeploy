@@ -2,6 +2,8 @@
 
 This guide explains how to deploy a Node.js application from a **private GitHub repository** to **cPanel** using **GitHub Actions** and FTP.
 
+Original content from [SyntaNext YouTube Channel](https://www.youtube.com/@syntanext)
+
 ---
 
 ## 📌 Prerequisites
