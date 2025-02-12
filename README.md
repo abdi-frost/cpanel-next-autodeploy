@@ -185,3 +185,29 @@ jobs:
             .gitignore
             .eslintrc.
 ```                
+### 8️⃣ Push Changes to GitHub
+Commit and push your changes to the `main` branch of your GitHub repository.
+
+### 9️⃣ Monitor GitHub Actions
+- Go to the **Actions** tab in your GitHub repository.
+- Monitor the deployment workflow for any errors.
+
+### 🔟 Verify Deployment in cPanel
+- Log in to **cPanel** and navigate to the **File Manager**.
+- Check if the files have been deployed correctly.
+
+### 1️⃣1️⃣ Install Node Modules
+Since this is the first time, you need to install the node modules on your server:
+```sh
+npm install
+```
+
+### 1️⃣2️⃣ Add Node Environment Variables in cPanel
+If you have any environment variables, add them in cPanel. If not, you can skip this step.
+
+### 1️⃣3️⃣ Restart the Node.js Application
+Go to Setup Node.js App in cPanel.
+Restart your application.
+### 1️⃣4️⃣ Make Changes and Test Auto Deployment
+Make changes to your code and push them to the main branch.
+Verify that the changes are automatically deployed by checking your application URL.
