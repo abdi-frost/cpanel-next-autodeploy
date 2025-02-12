@@ -101,3 +101,87 @@ Update your `package.json` file to include a start script that sets the `NODE_EN
     "start": "NODE_ENV=production node server.js"
   }
 }
+
+### 7️⃣ Create GitHub Actions Workflow
+Create a `.github/workflows/deploy.yml` file in the root of your project with the following content:
+
+**Dont forget to remove the comments from yml file**
+
+```yaml
+name: 🚀 CNAD
+
+on:
+  push:
+    # name of your listener branch
+    branches: [ "main" ] 
+
+jobs:
+  build:
+    name: Build Nextjs app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+        # replace with your nodejs version
+      - name: Use Node.js 20.x 
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+        # this is where you inject env files for building
+        # you can add here or in github secrets
+
+      - name: Generate build
+        run: npm run build
+
+      - name: Upload .next folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: dot_next_folder
+          path: .next/
+          # added on upload-artifact v4 for hidden files
+          include-hidden-files: true
+
+  web-deploy:
+    name: 🚀 Deploy
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Creating restart file
+        run: |
+          mkdir tmp && touch tmp/restart.txt
+          echo $RANDOM > tmp/restart.txt
+
+      - name: Download .next folder
+        uses: actions/download-artifact@v4
+        with:
+          name: dot_next_folder
+          path: .next
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          # define these in github repo setting secrets actions
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          exclude: |
+            **/.next/cache/**
+            **/.github/**
+            **/.git/**
+            pages/**
+            postcss.config.mjs
+            tailwind.config.mjs
+            README.md
+            .gitignore
+            .eslintrc.
+```                
