@@ -203,11 +203,11 @@ npm install
 ```
 
 ### 1️⃣2️⃣ Add Node Environment Variables in cPanel
-If you have any environment variables, add them in cPanel. If not, you can skip this step.
+- If you have any environment variables, add them in cPanel. If not, you can skip this step.
 
 ### 1️⃣3️⃣ Restart the Node.js Application
-Go to Setup Node.js App in cPanel.
-Restart your application.
+- Go to Setup Node.js App in cPanel.
+- Restart your application.
 ### 1️⃣4️⃣ Make Changes and Test Auto Deployment
-Make changes to your code and push them to the main branch.
-Verify that the changes are automatically deployed by checking your application URL.
+- Make changes to your code and push them to the main branch.
+- Verify that the changes are automatically deployed by checking your application URL.
