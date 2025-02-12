@@ -36,7 +36,7 @@ Add `cnad` to your project:
 
 ```sh
 npm install @bitc/cnad
-
+```
 ### 5️⃣ Create a `server.js` File
 Create a `server.js` file in the root of your project with the following sample code:
 
