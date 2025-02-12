@@ -101,7 +101,7 @@ Update your `package.json` file to include a start script that sets the `NODE_EN
     "start": "NODE_ENV=production node server.js"
   }
 }
-
+```
 ### 7️⃣ Create GitHub Actions Workflow
 Create a `.github/workflows/deploy.yml` file in the root of your project with the following content:
 
