@@ -1,4 +1,4 @@
-# 🚀 Next.js Deployment to cPanel via GitHub Actions
+# 🚀 Next.js Auto Deployment to cPanel via GitHub Actions
 
 This guide explains how to deploy a Node.js application from a **private GitHub repository** to **cPanel** using **GitHub Actions** and FTP.
 
