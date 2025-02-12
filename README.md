@@ -35,4 +35,4 @@ Create a new private repository on GitHub and push your Node.js project.
 Add `cnad` to your project:
 
 ```sh
-npm install cnad
+npm install @bitc/cnad
