@@ -2,7 +2,7 @@
 
 This guide explains how to deploy a Node.js application from a **private GitHub repository** to **cPanel** using **GitHub Actions** and FTP.
 
-Not that this is for dynamic nextjs application with server side function/pages and IS NOT FOR STATIC EXPORT
+Note that this is for dynamic nextjs application with server side function/pages and IS NOT FOR STATIC EXPORT
 
 Original content from [SyntaNext YouTube Channel](https://www.youtube.com/@syntanext)
 
